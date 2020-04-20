@@ -10,17 +10,41 @@ new Vue({
               {action: "tidy up",     importance: "low"}
               ],
 
-      newTodo: ""
+      newTodo: "",
+      importance: ""
           },
   methods:{
       saveNewToDo: function(){
-            const newObject = {action: this.newTodo, importance:'low'}
+        let newObject = {action: this.newTodo, importance:'low'}
+          if (this.importance === 'high'){
+            newObject = {action: this.newTodo, importance:'high'}
+            }
                 this.todos.push(newObject);
                 this.newTodo = "";
+                this.importance = "";
               },
-      lowImportance: function(index){
-        this.todos[index].importance = 'low' ? true : false
+      changeImportance: function(index){
+
+          if (this.todos[index].importance === 'low'){
+            this.todos[index].importance = 'high';
+          }else{
+            this.todos[index].importance = 'low'
+          }
+      },
+
+      sortByImportance: function(){
+        this.todos.sort(function(a,b){
+          let high = a.importance;
+          let low = b.importance;
+          if (high<low){
+            return -1;
+          }if (high> low){
+            return 1;
+          }
+          return 0;
+        });
       }
+
   }
 });
 

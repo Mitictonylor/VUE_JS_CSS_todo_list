@@ -11,18 +11,20 @@
     <h1>ToDo's</h1>
         <form v-on:submit.prevent="saveNewToDo">
             <input type="text" placeholder="Input what's to do"v-model="newTodo" required>
-            <input type="radio" name="importance" id="high" value="high">
+            <input type="radio"  v-model='importance' value='high'>
             <label for="high">High</label>
-            <input type="radio" name="importance" id="low" value="low" checked>
+            <input type="radio" v-model='importance' value='low'checked>
             <label for="low">Low</label>
             <input type="submit" value ="Save New Action" />
         </form>
-
+        <button v-on:click="sortByImportance">Sort by Importance</button>
         <ul style = 'list-style-type:none;'>
           <li v-for="(todo, index) in todos"v-bind:class="todo.importance === 'low' ? 'low' : 'high'">
             <span>{{todo.action}}</span>
             <span v-if="todo.importance === 'low'">Low</span>
             <span v-if="todo.importance !== 'low'">High</span>
+            <button  v-on:click="changeImportance(index)">Change Importance</button>
+
           </li>
         </ul>
 </div>
