@@ -17,8 +17,10 @@ new Vue({
             const newObject = {action: this.newTodo, importance:'low'}
                 this.todos.push(newObject);
                 this.newTodo = "";
-                }
-
+              },
+      lowImportance: function(index){
+        this.todos[index].importance = 'low' ? true : false
+      }
   }
 });
 
