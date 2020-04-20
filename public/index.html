@@ -23,7 +23,9 @@
             <span>{{todo.action}}</span>
             <span v-if="todo.importance === 'low'">Low</span>
             <span v-if="todo.importance !== 'low'">High</span>
+            <button v-on:click="done(index)">Done</button>
             <button  v-on:click="changeImportance(index)">Change Importance</button>
+
 
           </li>
         </ul>

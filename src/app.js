@@ -43,6 +43,11 @@ new Vue({
           }
           return 0;
         });
+      },
+
+      done: function(index){
+
+        this.todos.splice(index,1)
       }
 
   }
