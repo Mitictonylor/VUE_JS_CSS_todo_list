@@ -4,12 +4,18 @@ document.addEventListener("DOMContentLoaded", () =>{
 new Vue({
   el: "#app",
   data:{
-      todos: ["wash the car", "study", "tidy up"],
+      todos: [
+              {action: "wash the car",importance: "low" },
+              {action: "study",       importance: "high"},
+              {action: "tidy up",     importance: "low"}
+              ],
+
       newTodo: ""
           },
   methods:{
       saveNewToDo: function(){
-                this.todos.push(this.newTodo);
+            const newObject = {action: this.newTodo, importance:'low'}
+                this.todos.push(newObject);
                 this.newTodo = "";
                 }
 

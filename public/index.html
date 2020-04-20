@@ -3,25 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>TO DO LIST</title>
-    <script src="./js/bundle.js">
-
-    </script>
+    <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
   </head>
   <body>
   <div id="app">
     <h1>ToDo's</h1>
         <form v-on:submit.prevent="saveNewToDo">
-            <input type="text" placeholder="Input what's to do"v-model="newTodo">
-            <!-- <input type="radio" name="importance" id="high" value="high">
+            <input type="text" placeholder="Input what's to do"v-model="newTodo" required>
+            <input type="radio" name="importance" id="high" value="high">
             <label for="high">High</label>
             <input type="radio" name="importance" id="low" value="low">
-            <label for="low">Low</label> -->
+            <label for="low">Low</label>
             <input type="submit" value ="Save New Action" />
         </form>
 
         <ul style = 'list-style-type:none;'>
           <li v-for="todo in todos">
-            {{todo}}
+            <span>{{todo.action}}</span>
+            <span>{{todo.importance}}</span>
           </li>
         </ul>
 </div>
