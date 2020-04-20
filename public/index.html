@@ -9,7 +9,19 @@
   </head>
   <body>
   <div id="app">
+    <h1>ToDo's</h1>
+    <input type="text" name="todoAction" placeholder="Input what's to do">
+    <input type="radio" name="importance" id="high" value="high">
+    <label for="high">High</label>
+    <input type="radio" name="importance" id="low" value="low">
+    <label for="low">Low</label>
+    <button type="button" name="save">Save Item</button>
 
-  </div>
-</body>
+  <ul style = 'list-style-type:none;'>
+    <li v-for="todo in todos">
+      {{todo}}
+    </li>
+  </ul>
+</div>
+  </body>
 </html>
