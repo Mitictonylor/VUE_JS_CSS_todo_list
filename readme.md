@@ -4,7 +4,7 @@ An app created using Vue.js, JS, and CSS
 In this app you can add things to do to a list, giving them priority, and you will be able to remove a task once is marked as done. You can also sort the todos by priority
 # Setup
 
--Clone or save the repo
+- Clone or save the repo
 
 - In the terminal, access the directory and run:
 
